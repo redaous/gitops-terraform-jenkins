@@ -1,6 +1,9 @@
 // Jenkinsfile
 String credentialsId = 'awsCredentials'
 
+def tfHome = tool name: 'Terraform', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
+    env.PATH = "${tfHome}:${env.PATH}"
+
 try {
   stage('checkout') {
     node {
