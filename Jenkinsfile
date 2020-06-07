@@ -1,4 +1,5 @@
-pipelines {
+pipeline(
+    stages{
 // Jenkinsfile
 String credentialsId = 'awsCredentials'
 
