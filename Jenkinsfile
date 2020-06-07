@@ -1,11 +1,6 @@
-pipeline(
-    stages{
 // Jenkinsfile
 String credentialsId = 'awsCredentials'
 
-def tfHome = tool name: 'Terraform', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
-    env.PATH = "${tfHome}:${env.PATH}"
-    stages {
 try {
   stage('checkout') {
     node {
@@ -93,10 +88,4 @@ finally {
   if (currentBuild.result == 'SUCCESS') {
     currentBuild.result = 'SUCCESS'
   }
-    
-}
-
-        
-    }
-    }   
 }
